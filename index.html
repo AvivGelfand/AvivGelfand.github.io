@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviv's Crypto Monitor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- this is empty for now -->
+    <style>
+       #header{
+               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ; 
+               /* background-color: white; */
+            }
+        body { 
+            background: url(cool-background.png)  no-repeat center center fixed; 
+            /* source: https://coolbackgrounds.io/white-background/ */
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            }
+            hr{
+               border-color: black; 
+               background-color: black;
+                /* width: 100%; */
+                /* box-sizing: border-box; */
+                padding: 0px;
+                margin: unset;
+            }
+            h1{
+                /* padding-top: 0.5rem; */
+                padding-bottom: 0px;
+                /* text-align: center; */
+
+            }
+            #header{
+                background: url(backgroundimage6.jpg)  no-repeat center center ; 
+            /* source: https://coolbackgrounds.io/white-background/ */
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            }
+            /* small{
+                word-wrap: break;
+            } */
+            menu{
+                margin-right: 1rem;
+            }
+            @media screen and (max-width: 600px) {
+                small{
+                    display: block;
+                }
+                
+            }
+    </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="header">
+            <!-- <img src="backgroundimage1.jpg" class="img-fluid" alt="Responsive image"> -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h1>Crypto Monitor | <small class="text-muted">by Aviv Gelfand</small></h1></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h1></h1></div>
+        </div>
+        <hr> <br>
+        <div class="row" id="menu">
+           
+<div class="container">
+    <h2>Toggleable Tabs</h2>
+    <br>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#menu1">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu2">Menu 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu3">Menu 2</a>
+      </li> 
+      <li class="input-group-prepend">
+        <!-- <a class="input-group-text" data-toggle="tab" href=""></a> -->
+        <input type="search" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="I'm looking for...">
+      </li>
+      
+    </ul>
+    
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="menu1" class="container tab-pane active"><br>
+        <input type="search" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="I'm looking for...">
+        <h3>HOME</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+
+      <div id="menu2" class="container tab-pane fade"><br>
+        <h3>Menu 1</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <div id="menu3" class="container tab-pane fade"><br>
+        <h3>Menu 2</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      </div>
+    </div>
+  </div>
+  
+             
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form> -->
+            <!-- <button class=""></button> -->
+        </div>
+        <div id="search" class="row">
+            <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+                <div class="container">
+                  <a class="navbar-brand" href="#">
+                        <img src="http://placehold.it/150x50?text=Logo" alt="">
+                      </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                  <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                              <span class="sr-only">(current)</span>
+                            </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav> -->
+            <!-- <div id="first" class="input-group mb-3 col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Country</span>
+                </div>
+                <input type="text" id="country1" class="form-control" placeholder="First Country" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+            <div id="second" class="input-group mb-3 col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2">Country</span>
+                </div>
+                <input type="text" id="country2" class="form-control" placeholder="Second Country" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+            <div id="number" class="input-group mb-3 col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3"> Days </span>
+                </div>
+                <input type="number" id="numberIn" class="form-control" placeholder="Number of days" aria-label="Username"
+                    aria-describedby="basic-addon1" min="0">
+            </div>
+            <div class="input-group mb-3 col-12 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Compare By</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>Compare By...</option>
+                    <option value="cases">Cases</option>
+                    <option value="deaths">Deaths</option>
+                    <option value="recovered">Recovered</option>
+                </select>
+            </div>
+                <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 btn-sm">
+
+                <input id="compareBut" class="btn btn-primary btn-block" type="button" value="Compare Countries">
+            </div>
+            <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 btn-sm">
+                <input id="clear" class="btn btn-danger btn-block" type="button" value="Clear">
+            </div> -->
+        </div>
+        <!-- <div class="row" id="chartsContainer">
+        </div> -->
+    </div>
+    
+</body>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+</html>
