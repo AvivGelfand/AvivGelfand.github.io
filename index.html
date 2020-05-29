@@ -1,78 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aviv's Crypto Monitor</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css"> <!-- this is empty for now -->
-    
-    <style>
-       #header{
-               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ; 
-            }
-        body { 
-            background: url(cool-background.png)  no-repeat center center fixed; 
-            /* source: https://coolbackgrounds.io/white-background/ */
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ; 
-            }
-            hr{
-               border-color: black; 
-               background-color: black;
-                /* width: 100%; */
-                /* box-sizing: border-box; */
-                padding: 0px;
-                margin: unset;
-            }
-           
-            #header{
-              background: url(backgroundimage6.jpg)  no-repeat center center ; 
-              /* source: https://coolbackgrounds.io/white-background/ */
-              -webkit-background-size: cover;
-              -moz-background-size: cover;
-              -o-background-size: cover;
-              background-size: cover;
-              padding: 0px;
-            }
-            .row{
-              padding: 20px;
-            }
-            /* small{
-                word-wrap: break;
-            } */
-            menu{
-                margin-right: 1rem;
-            }
-            @media screen and (max-width: 600px) {
-                small{
-                    display: block;
-                }
-
-            }
-    </style>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviv's Crypto Dashboard</title>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="style.css"> this is empty for now -->
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+  <!-- https://gitbrent.github.io/bootstrap4-toggle/ -->
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row rounded border-bottom" id="header">
             <!-- <img src="backgroundimage1.jpg" class="img-fluid" alt="Responsive image"> -->
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h1>Crypto Monitor | <small class="text-muted">by Aviv Gelfand</small></h1></div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h1>Crypto Dashboard | <small class="text-muted">by Aviv Gelfand</small></h1></div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"><h1></h1></div>
         </div>
-        <!-- <hr> -->
-         <br>
-        <div class="row" id="menu">
-          <!-- <h2>Toggleable Tabs</h2> -->
-          <!-- <br> -->
+        
+         <div class="row" id="menuBox">
           <!-- Nav tabs -->
           <ul class="nav nav-tabs col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" role="tablist">
             <li class="nav-item">
@@ -84,134 +37,151 @@
             <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href="#menu3">About</a>
             </li> 
-            <!-- <li class="input-group-prepend">
-              <a class="input-group-text" data-toggle="tab" href=""></a>
-              <input type="search" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="I'm looking for...">
-            </li> -->
           </ul>
+        </div>
           
-          <!-- Tab panes -->
-          <div class="row" id="contentSwitch">
+          <!-- Tab panes - contains the different tabs-->
+          <div class="container-fluid" id="contentSwitch">
+           
             <div class="tab-content">
-              <div id="menu1" class="container tab-pane active">
+              <!-- menu1 -->
+              <div id="menu1" class="tab-pane active ">
                 <h3>Search your currency</h3>
                   <input type="search" class="form-control col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4" aria-label="Amount (to the nearest dollar)" placeholder="I'm looking for...">
-                  <div class="row">   
-                    <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">BTC</h5>
-                            <p class="card-text">Bitcoin</p>
-                            <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">More Info</button>
-                            
-                            <div class="collapse" id="collapseExample1">
-                              <div class="card card-body">
-                               <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:3rem; height:3rem;"> 
-                                <p>price by USD: ...$</p>
-                               <p>price by EURO: ...€</p>
-                               <p>price by NIS: ...₪</p>
-                              </div>
-                            
-                            </div>
+                 <br>
+                
+                 <!-- cards col -->
+                 <div class="row" id="cards">
+                 <!-- cards col 1 -->
+                  <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4" id="firstColumn">
+                      <div class="card">
+                        <div class="card-body">
+                          <!-- toggle switch -->
+                          <div class="switch">
+                            <input type="checkbox" data-toggle="toggle" data-size="sm" class="switch">
+                          </div>
+                          <h5 class="card-title">BTC</h5>
+                          <p class="card-text">Bitcoin</p>
+                          <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">More Info</button>
+                          <div class="collapse" id="collapseExample1">
+                            <br> 
+                            <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:3rem; height:3rem;"> 
+                              <p>price by USD: ...$</p>
+                             <p>price by EURO: ...€</p>
+                             <p>price by NIS: ...₪</p>
                           </div>
                         </div>
                       </div>
-                      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">BTC</h5>
-                            <p class="card-text">Bitcoin</p>
-                            <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">More Info</button>
-                            
-                            <div class="collapse" id="collapseExample">
-                              <div class="card card-body">
-                               <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:100px; height:100px;"> 
-                                <p>price by USD: ...$</p>
-                               <p>price by EURO: ...€</p>
-                               <p>price by NIS: ...₪</p>
-                              </div>
-                            
-                            </div>
+                      <div class="card">
+                        <div class="card-body">
+                          <!-- toggle switch -->
+                          <div class="switch">
+                            <input type="checkbox" data-toggle="toggle" data-size="sm" class="switch">
                           </div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">BTC</h5>
-                            <p class="card-text">Bitcoin</p>
-                            <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">More Info</button>
-                            
-                            <div class="collapse" id="collapseExample">
-                              <div class="card card-body">
-                               <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:100px; height:100px;"> 
-                                <p>price by USD: ...$</p>
-                               <p>price by EURO: ...€</p>
-                               <p>price by NIS: ...₪</p>
-                              </div>
-                            
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">BTC</h5>
-                            <p class="card-text">Bitcoin</p>
-                            <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">More Info</button>
-                            
-                            <div class="collapse" id="collapseExample">
-                              <div class="card card-body">
-                               <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:100px; height:100px;"> 
-                                <p>price by USD: ...$</p>
-                               <p>price by EURO: ...€</p>
-                               <p>price by NIS: ...₪</p>
-                              </div>
-                            
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">BTC</h5>
-                            <p class="card-text">Bitcoin</p>
-                            <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">More Info</button>
-                            
-                            <div class="collapse" id="collapseExample">
-                              <div class="card card-body">
-                               <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:100px; height:100px;"> 
-                                <p>price by USD: ...$</p>
-                               <p>price by EURO: ...€</p>
-                               <p>price by NIS: ...₪</p>
-                              </div>
-                            
-                            </div>
+                          <h5 class="card-title">BTC</h5>
+                          <p class="card-text">Bitcoin</p>
+                          <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">More Info</button>
+                          <div class="collapse" id="collapseExample2">
+                             <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:3rem; height:3rem;"> 
+                              <p>price by USD: ...$</p>
+                             <p>price by EURO: ...€</p>
+                             <p>price by NIS: ...₪</p>
                           </div>
                         </div>
                       </div>
                     </div>
+                 <!-- cards col 2 -->
+                    <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4" id="secondColumn">
+                      <div class="card">
+                        <div class="card-body">
+                          <!-- toggle switch -->
+                          <div class="switch">
+                          <input type="checkbox" data-toggle="toggle" data-size="sm" class="switch">
+                        </div>
+                          <h5 class="card-title">BTC</h5>
+                          <p class="card-text">Bitcoin</p>
+                          <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">More Info</button>
+                          <div class="collapse" id="collapseExample3">
+                             <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:3rem; height:3rem;"> 
+                              <p>price by USD: ...$</p>
+                             <p>price by EURO: ...€</p>
+                             <p>price by NIS: ...₪</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body">
+                          <!-- toggle switch -->
+                          <div class="switch">
+                            <input type="checkbox" data-toggle="toggle" data-size="sm" class="switch">
+                          </div>
+                          <h5 class="card-title">BTC</h5>
+                          <p class="card-text">Bitcoin</p>
+                          <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">More Info</button>
+                          <div class="collapse" id="collapseExample4">
+                             <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:3rem; height:3rem;"> 
+                              <p>price by USD: ...$</p>
+                             <p>price by EURO: ...€</p>
+                             <p>price by NIS: ...₪</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                 <!-- cards col 3 -->
+                    <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4" id="thirdColumn">
+                      <div class="card">
+                        <div class="card-body">
+                          <!-- toggle switch -->
+                          <div class="switch">
+                            <input type="checkbox" data-toggle="toggle" data-size="sm" class="switch">
+                          </div>
+                          <h5 class="card-title">BTC</h5>
+                          <p class="card-text">Bitcoin</p>
+                          <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5">More Info</button>
+                          <div class="collapse" id="collapseExample5">
+                             <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:3rem; height:3rem;"> 
+                              <p>price by USD: ...$</p>
+                             <p>price by EURO: ...€</p>
+                             <p>price by NIS: ...₪</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body">
+                          <!-- toggle switch -->
+                          <div class="switch">
+                            <input type="checkbox" data-toggle="toggle" data-size="sm" class="switch">
+                          </div>
+                          <h5 class="card-title">BTC</h5>
+                          <p class="card-text">Bitcoin</p>
+                          <button class="btn btn-primary" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false" aria-controls="collapseExample6">More Info</button>
+                          <div class="collapse" id="collapseExample6">
+                             <img src="https://previews.123rf.com/images/stalkerstudent/stalkerstudent1712/stalkerstudent171200049/91941373-bitcoin-icon-coin-logo-crypto-currency-symbol-silhouette-e-commerce-concept-vector-.jpg" class="img-thumbnail" style="width:3rem; height:3rem;"> 
+                              <p>price by USD: ...$</p>
+                             <p>price by EURO: ...€</p>
+                             <p>price by NIS: ...₪</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              <div id="menu2" class="container tab-pane fade">
+              <div id="menu2" class=" tab-pane fade">
                 <h3>Live reports</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>still in process</p>
               </div>
 
-              <div id="menu3" class="container tab-pane fade">
+              <div id="menu3" class="tab-pane fade">
                 <h3>Menu 2</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                <p>still in progress</p>
               </div>
+            
+            
             </div>
+            
         </div>
              
-            <!-- <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form> -->
-            <!-- <button class=""></button> -->
-        </div>
+       
   
             <!-- <div id="first" class="input-group mb-3 col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
                 <div class="input-group-prepend">
