@@ -37,27 +37,71 @@ body {
      margin-right: 1rem;
  }
 
- /* .card{
-    /* box-sizing: border-box; */
-    /* width: 100%; */
-    /* display: inline-block; */
-    /* column-break-inside: avoid  */
+ .card{
+    width: 100%;
+    display: inline-block;
     /* float: left; */
-  /* }  */ */
+  }  
 
   #last{
       height: 500px;
       width: 2000px;
   }
-  .switch{
-      position: absolute;
-      right: 15px;
-      top: 19px;
-  }
-  #thirdColumn, #secondColumn, #firstColumn{
+  
+  #column0, #column1, #column2{
     /* color: aqua; */
     padding: 0px 0px;
   }
+
+/* switch-toggle */
+
+.custom-switch{
+    position: absolute;
+    right: 15px;
+    top: 19.3px;
+}
+.custom-switch {
+  padding-left: 0.7rem;
+  padding-bottom: 1.5rem; 
+}
+
+.custom-control-label { 
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+}
+
+.custom-switch .custom-control-label::before {
+  left: -2.25rem;
+  height: 2rem;
+  width: 3.5rem;   
+  pointer-events: all;
+  border-radius: 1rem;
+}
+
+.custom-switch .custom-control-label::after {
+  top: calc(0.25rem + 2px);
+  left: calc(-2.25rem + 2px);
+  width: calc(2rem - 4px);   
+  height: calc(2rem - 4px);  
+  background-color: #adb5bd;
+  border-radius: 2rem; 
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .custom-switch .custom-control-label::after {
+    transition: none;
+  }
+}
+
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+  background-color: #fff;
+  -webkit-transform: translateX(1.5rem); 
+  transform: translateX(1.5rem); 
+}
+
  @media screen and (max-width: 600px) {
      small{
          display: block;
