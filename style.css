@@ -53,16 +53,30 @@ body {
     padding: 0px 0px;
   }
 
-/* switch-toggle */
+  /* #loadedData */
 
-.custom-switch{
+
+/* switch-toggle */
+.incard{
+  position: absolute;
+  right: 15px;
+  top: 20px;
+}
+
+
+
+
+
+/* switch-toggle old version*/
+
+/* .custom-switch{
     position: absolute;
     right: 15px;
-    top: 19.19px;
+    top: 16px;
 }
 .custom-switch {
   padding-left: 0.7rem;
-  padding-bottom: 1.5rem; 
+  padding-bottom: 1.6rem; 
 }
 
 .custom-control-label { 
@@ -89,7 +103,7 @@ body {
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
-}
+} */
 
 /* css loader: */
 .lds-ring {
@@ -130,17 +144,17 @@ body {
 
 /* end */
 
-@media (prefers-reduced-motion: reduce) {
+/* @media (prefers-reduced-motion: reduce) {
   .custom-switch .custom-control-label::after {
     transition: none;
   }
-}
+} */
 
-.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+/* .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
   background-color: #fff;
   -webkit-transform: translateX(1.5rem); 
   transform: translateX(1.5rem); 
-}
+} */
 
  @media screen and (max-width: 600px) {
      small{
