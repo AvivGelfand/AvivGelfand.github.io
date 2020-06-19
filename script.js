@@ -105,6 +105,7 @@ const createCards = (url) => {
                                  
                                 // debugger
                                    
+                                }
                             }else{
                                     alert('new coin!')
                                     // debugger
@@ -144,7 +145,7 @@ const createCards = (url) => {
                                         `);
                                     });
                                 }
-                            }
+
                             });
                     $(`#collapse${j}`).on("hidden.bs.collapse", function(){
                         $(`#loadedCoinData${j}`).remove();
