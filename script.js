@@ -44,6 +44,7 @@ const createCards = (url) => {
                             // 2. variable = JSON.parse() 
                             let storedCoinsArr = []; 
                             if(storedCoinsJson){
+                                // debugger
                                 storedCoinsArr = JSON.parse(storedCoinsJson);
                                 let index = storedCoinsArr.findIndex(a => a.name == coinsData[j].name.toLowerCase())
                                 // debugger
@@ -80,9 +81,9 @@ const createCards = (url) => {
                                             <div id="loadedCoinData${j}" >
                                                 <br>
                                                 <img src="${coinDataObj.image}" class="img-thumbnail" style="width:3rem; height:3rem;"> 
-                                                <p>Price by USD: ${coinDataObj.usdPrice}$</p>
-                                                <p>Price by EURO: ${coinDataObj.euroPrice}€</p>
-                                                <p>Price by NIS: ${coinDataObj.ilsPrice}₪</p>
+                                                <p>USD: ${coinDataObj.usdPrice}$</p>
+                                                <p>EURO: ${coinDataObj.euroPrice}€</p>
+                                                <p>NIS: ${coinDataObj.ilsPrice}₪</p>
                                             </div>
                                              `);
                                          });
@@ -95,17 +96,19 @@ const createCards = (url) => {
                                             <div id="loadedCoinData${j}" >
                                                 <br>
                                                 <img src="${storedCoinsArr[index].image}" class="img-thumbnail" style="width:3rem; height:3rem;"> 
-                                                <p>Price by USD: ${storedCoinsArr[index].usdPrice}$</p>
-                                                <p>Price by EURO: ${storedCoinsArr[index].euroPrice}€</p>
-                                                <p>Price by NIS: ${storedCoinsArr[index].ilsPrice}₪</p>
+                                                <p>USD: ${storedCoinsArr[index].usdPrice}$</p>
+                                                <p>EURO: ${storedCoinsArr[index].euroPrice}€</p>
+                                                <p>NIS: ${storedCoinsArr[index].ilsPrice}₪</p>
                                             </div>
                                         `);
                                     }   
-                                 }
+                                 
                                 // debugger
-                                }else{
+                                   
+                            }else{
                                     alert('new coin!')
-                                    let url2 = `https://api.coingecko.com/api/v3/coins/${coinsData[j].id.toLowerCase()}`
+                                    // debugger
+                                    let url2 = `https://api.coingecko.com/api/v3/coins/${coinsData[j].id } `
                                     $.get(url2).then(function(coin){
                                         // debugger
                                         let d = new Date();
@@ -134,14 +137,15 @@ const createCards = (url) => {
                                             <div id="loadedCoinData${j}" >
                                                 <br>
                                                 <img src="${coinDataObj.image}" class="img-thumbnail" style="width:3rem; height:3rem;"> 
-                                                <p>Price by USD: ${coinDataObj.usdPrice}$</p>
-                                                <p>Price by EURO: ${coinDataObj.euroPrice}€</p>
-                                                <p>Price by NIS: ${coinDataObj.ilsPrice}₪</p>
+                                                <p>USD: ${coinDataObj.usdPrice}$</p>
+                                                <p>EURO: ${coinDataObj.euroPrice}€</p>
+                                                <p>NIS: ${coinDataObj.ilsPrice}₪</p>
                                             </div>
                                         `);
                                     });
                                 }
-                    });
+                            }
+                            });
                     $(`#collapse${j}`).on("hidden.bs.collapse", function(){
                         $(`#loadedCoinData${j}`).remove();
                         $(`#collapse${j}`).append(`
