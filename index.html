@@ -21,7 +21,6 @@
         <h1></h1>
       </div>
     </div>
-
     <div class="row" id="menuBox">
       <!-- Nav tabs -->
       
@@ -67,28 +66,29 @@
         <!--closing for menu 1 -->
 
         <!-- modal is hiding here -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal fade bd-example-modal-sm" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title text-center" id="exampleModalLongTitle"><h4>You can only choose up to 5 coins:</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
               </div>
               <div class="modal-body">
-                <div class="custom-control custom-switch" >
-                  <input type="checkbox" class="custom-control-input" id="switch${i}">
-                  <label class="custom-control-label" for="switch${u}"></label>
-              </div>   
+                  <div class="row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" id="modalBodyFirst"></div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" id="modalBodySecond"></div>
+                  </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" id="saveChengesBtn">Save changes</button>
               </div>
             </div>
           </div>
         </div>
+
         <div id="menu2" class=" tab-pane fade">
           <h3>Live reports</h3>
           <p>still in process</p>
