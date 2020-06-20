@@ -10,15 +10,17 @@ const createCards = (url) => {
             for(let i = 0; i < 3; i++){
                 // debugger
                 for(let j = i; j < coinsData.length; j+=3){
+                    coinsData[j].indx= j;
+                    // debugger
                     $(`#column${i}`).append(`
                         <div class="card" id=c${j}>
                             <div class="card-body">
                                 <!-- toggle switch -->
 
                                 <div 
-                                class="custom-control custom-switch  incard" >
+                                class="custom-control custom-switch incard" id="incard${j}">
                                     <input type="checkbox" class="custom-control-input" id="switch${j}">
-                                    <label class="custom-control-label" for="switch${j}"></label>
+                                    <label class="custom-control-label" for="switch${j}" id="label${j}"></label>
                                 </div>
 
                                 <h5 class="card-title">${coinsData[j].symbol}</h5>
@@ -103,7 +105,6 @@ const createCards = (url) => {
                                             </div>
                                         `);
                                     }   
-                                 
                                 // debugger
                             }else{
                                     alert('new coin!')
@@ -192,20 +193,21 @@ const createCards = (url) => {
                         `)
                         // debugger
                     });
-                    // function for choosing keys:
-                    $(`#switch${j}`).change( function(){
+                    // function for choosing keys and drawing modal:
+                    $(`#switch${j}`).change( function(){ //
                         if(this.checked){
                             // alert(`aaa ${j}`)
-                        if(selectedCrypto.length < 5){
-                            selectedCrypto.push(coinsData[j])
-                            // alert(selectedCrypto)
-                            // debugger
-                        }else{
-                            //MODAL
-                            // alert('modal')
-                            $('#exampleModalCenter').modal('show')
-                            makeModalContent()
-                    }
+                            if(selectedCrypto.length < 5){
+                                selectedCrypto.push(coinsData[j])
+                                // debugger
+                            }else{
+                                $(`#switch${j}`).prop('checked', false);
+                                //MODAL
+                                // alert('modal')
+                                drawModalContent(coinsData[j])
+                                $('#exampleModalCenter').modal('show')
+                                handleUpToFive(coinsData[j])
+                            }
                     }else{
                         let index = selectedCrypto.findIndex(a => a.name == coinsData[j].name)
                         if(index > -1){
@@ -213,9 +215,9 @@ const createCards = (url) => {
                         }
                     // debugger
                     }
-            })
+                    });
 
-                }
+             }
             }
             $("#search").keyup(function() {
                 //clear 
@@ -232,9 +234,6 @@ const createCards = (url) => {
                 // alert('the search filter is not done yet')
                 // debugger
             })
-
-            
-            
         });
     }
     
@@ -246,22 +245,99 @@ function getFilteredCoins(coins) {
 	});
 }
 
-const makeModalContent = () => {
+const drawModalContent = (sixth) => {
     // debugger
+    // $(".modal-body").empty()   
     for(let i = 0; i < selectedCrypto.length; i++){
-        let u = i*100;
-        $('.modal-body').append(`
-        <div class="custom-control custom-switch" >
-                <input type="checkbox" class="custom-control-input" id="switch${i}">
+        let u = i+100;
+        $('#modalBodyFirst').append(`
+            <div class="custom-control custom-switch modalSwitch">
+                <input type="checkbox" class="custom-control-input" id="switch${u}" checked>
                 <label class="custom-control-label" for="switch${u}"></label>
             </div>   
-            <h4 class="card-title">${selectedCrypto[i].symbol}</h4>
-        </div>
+            <h5 class="modalH5" id="symbol${u}">${selectedCrypto[i].symbol}</h5>
         `)    
     }
+    $('#modalBodySecond').append(`
+    <div class="custom-control custom-switch modalSwitch" id="sixSwitchDiv">
+        <input type="checkbox" class="custom-control-input" id="switch${105}">
+        <label class="custom-control-label" for="switch${105}"></label>
+    </div>   
+    <h5 class="modalH5" id="sixSymbol"><mark>${sixth.symbol}</mark></h5>
+    `) 
+    
 }
 
-// $('#exampleModalCenter').modal('show')
+const handleUpToFive = (sixth) =>{
+    //count how many are checkd
+    let counter = 5;
+    // let status = {}
+    // let key = i;
+    for(let i = 100; i < 106; i++){
+     $(`#switch${i}`).change( function(){
+            if(this.checked){
+            counter++
+            // alert(counter)
+            }else{
+                counter--;
+                // alert(counter)
+            }
+            if(counter > 5){
+                // disable #saveChengesBtn
+                $(`#saveChengesBtn`).prop('disabled', true);
+                //tooltip that says - "dispose one coin"
+                //don't forget
+                }else{
+                    $(`#saveChengesBtn`).prop('disabled', false);
+                }
+     });
+    }
+    // if 6 then inable button of save changes
+    // button save changes will aply the change on all the coins
+    $(`#saveChengesBtn`).click(function(){
+        let temp = [];
+        for(let i = 100; i < 106; i++){
+            let u = i-100;
+            // debugger
+            let index = selectedCrypto.findIndex(a => a.symbol == $(`#symbol${i}`).text())
+            if($(`#switch${i}`).prop("checked")){
+                // alert('checked')
+                // debugger
+                // debugger
+                if(index > -1){
+                    temp.push(selectedCrypto[index])
+                // debugger
+                }else{
+                    temp.push(sixth)
+                    // debugger
+                    $(`#switch${sixth.indx}`).prop('checked', true); //find the real num
+                }
+                }else{
+                    // let n = ;
+                    // debugger
+                    let index = selectedCrypto.findIndex(a => a.symbol == $(`#symbol${i}`).text())
+                    let indx = selectedCrypto[index].index; 
+                    $(`#switch${indx}`).prop('checked', false);
+                    // selectedCrypto
+                    // debugger
+                }
+            }
+            selectedCrypto.length = 0;
+            // debugger
+            for(let x = 0; x < temp.length; x++){
+                selectedCrypto.push(temp[x])
+            }
+            // debugger
+        $('#exampleModalCenter').modal('hide')
+        
+    });
+    $('#exampleModalCenter').on('hidden.bs.modal', function (e) {
+        $('#modalBodyFirst').empty()
+        $('#modalBodySecond').empty()
+    })
+}
+
+
 
 // filtering includes clear and creating a new arry and making cards out of it
 // const userCoinExists = (coinName, array) => {
